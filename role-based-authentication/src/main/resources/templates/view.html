@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>View File</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h2>File Content</h2>
+  <pre th:text="${fileContent}"></pre>
+  <a href="#" class="btn btn-primary" th:href="@{/instructor/lessons}">Back to Lessons</a>
+</div>
+</body>
+</html>

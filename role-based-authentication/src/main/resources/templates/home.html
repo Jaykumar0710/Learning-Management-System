@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdPjdF6epRm5uwHqbuSzU0fO1r47a8aSOzLs2DptQjr6kB9G1eqEZyH+LqI5uFVbhk5Lz4+Pl1thx2Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('img/home.jpg'); /* Replace with a proper image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        .course-item img:hover {
+             transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+           }
+
+
+        .feature-item, .course-item, .testimonial {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .course-item img, .testimonial img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .social-icons a img {
+            width: 32px;
+            margin: 0 10px;
+        }
+        .navbar {
+            background-color: #1d2b64;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
+
+    <div class="container">
+        <a class="navbar-brand" href="#">LMS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary text-white" th:href="@{/register}">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container text-center">
+        <h1 class="display-4">Learn Anything, Anytime, Anywhere</h1>
+        <p class="lead">Unlock the power of online learning with expert instructors, interactive classes, and hands-on projects.</p>
+        <a th:href="@{/register}" class="btn btn-lg btn-primary">Start Learning Today</a>
+        <p class="mt-3">Join 10,000+ learners on our platform.</p>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Choose Our LMS?</h2>
+        <div class="row text-center">
+            <div class="col-md-4 feature-item">
+                <img th:src="@{/img/teach.jpg}" alt="Flexible Learning">
+                <h4>Expert Teaching</h4>
+                <p>Learn from expert teacher and instructors. Our platform provides a seamless experience across mobile, tablet, and desktop devices.</p>
+            </div>
+
+            <div class="col-md-4 feature-item">
+                <img th:src="@{/img/woman-having-videocall-using-laptop-device-from-home.jpg}" alt="Flexible Learning">
+                <h4>Flexible Learning</h4>
+                <p>Access courses anytime, from anywhere, on any device. Our platform provides a seamless experience across mobile, tablet, and desktop devices.</p>
+            </div>
+            <div class="col-md-4 feature-item">
+                <img th:src="@{/img/guarantee-approved-authorized-certified-concept.jpg}" alt="Certification">
+                <h4>Certification</h4>
+                <p>Earn certificates upon completing courses. Your certification will add value to your professional profile and help advance your career.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses" class="courses py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Popular Courses</h2>
+        <div class="row text-center">
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/web development.jpg}" alt="Web Development">
+                <h4>Web Development</h4>
+                <p>Build interactive websites and applications using HTML, CSS, JavaScript, and frameworks like React and Angular.</p>
+            </div>
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/representation-user-experience-interface-design.jpg}" alt="Data Science">
+                <h4>Data Science</h4>
+                <p>Master the art of data analysis and machine learning with Python, R, and TensorFlow.</p>
+            </div>
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/java developer.jpg}" alt="Java Development">
+                <h4>Java Development</h4>
+                <p>Learn Java from basics to advanced levels, including Spring Boot, Hibernate, and more for backend development.</p>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/python developer.jpg}" alt="Python Development">
+                <h4>Python Development</h4>
+                <p>Understand the versatility of Python for automation, scripting, data analysis, and web development.</p>
+            </div>
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/spring booot.jpg}" alt="Spring Boot">
+                <h4>Spring Boot</h4>
+                <p>Learn to create scalable web applications using Java Spring Boot framework.</p>
+            </div>
+            <div class="col-md-4 course-item">
+                <img th:src="@{/img/web development2.jpg}" alt="Angular Development">
+                <h4>Angular Development</h4>
+                <p>Develop dynamic front-end applications using Angular, TypeScript, and RESTful APIs.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a th:href="@{/login}" class="btn btn-primary">Explore All Courses</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Us Section -->
+<section id="about" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">About Us</h2>
+
+        <!-- About Us Intro -->
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img th:src="@{/img/about.jpg}" alt="About Us" class="img-fluid mb-4 rounded shadow-sm">
+            </div>
+            <div class="col-md-6">
+                <p class="lead">We are a dedicated team of educators and professionals committed to providing high-quality online learning experiences that cater to a global audience. Our platform offers a wide range of courses designed to fit the needs of learners at all stages of their education.</p>
+            </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="text-center my-5">
+            <h4 class="mb-3">Our Mission</h4>
+            <p class="lead">Our mission is to empower learners everywhere by providing access to top-notch educational resources and fostering lifelong learning. We believe that education should be accessible, flexible, and inspiring for everyone.</p>
+        </div>
+
+        <!-- Meet Our Team Section -->
+
+                <h4 class="text-center mb-5">Our Instructors</h4>
+                <div class="row text-center">
+                    <!-- Instructor 1 -->
+                    <div class="col-md-4">
+                        <img th:src="@{/img/instructor (3).jpg}" alt="Emily Parker" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h5>Emily Parker</h5>
+                        <p class="text-muted">Machine Learning Expert</p>
+                        <p>Emily is a seasoned machine learning expert with extensive experience in Python and TensorFlow. She has guided numerous learners to success in the field of AI.</p>
+
+                    </div>
+                    <!-- Instructor 2 -->
+                    <div class="col-md-4">
+                        <img th:src="@{/img/instructor (2).jpg}" alt="Michael Lee" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h5>Michael Lee</h5>
+                        <p class="text-muted">Cybersecurity Specialist</p>
+                        <p>Michael is a renowned cybersecurity instructor, guiding learners on securing networks and data from cyber threats.</p>
+                    </div>
+                    <!-- Instructor 3 -->
+                    <div class="col-md-4">
+                        <img th:src="@{/img/instructor (1).jpg}" alt="Sarah Brown" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <h5>Sarah Brown</h5>
+                        <p class="text-muted">Full Stack Developer</p>
+                        <p>With expertise in full stack development, Sarah helps students master web development from front-end to back-end.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Instructors Section -->
+<section id="instructors" class="section-padding">
+    <div class="container">
+        <h4 class="text-center mb-5">Our Instructors</h4>
+        <div class="row text-center">
+            <!-- Instructor 1 -->
+            <div class="col-md-4">
+                <img th:src="@{/img/instructor (3).jpg}" alt="Emily Parker" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5>Emily Parker</h5>
+                <p class="text-muted">Machine Learning Expert</p>
+                <p>Emily is a seasoned machine learning expert with extensive experience in Python and TensorFlow. She has guided numerous learners to success in the field of AI.</p>
+
+            </div>
+            <!-- Instructor 2 -->
+            <div class="col-md-4">
+                <img th:src="@{/img/instructor (2).jpg}" alt="Michael Lee" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5>Michael Lee</h5>
+                <p class="text-muted">Cybersecurity Specialist</p>
+                <p>Michael is a renowned cybersecurity instructor, guiding learners on securing networks and data from cyber threats.</p>
+            </div>
+            <!-- Instructor 3 -->
+            <div class="col-md-4">
+                <img th:src="@{/img/instructor (1).jpg}" alt="Sarah Brown" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <h5>Sarah Brown</h5>
+                <p class="text-muted">Full Stack Developer</p>
+                <p>With expertise in full stack development, Sarah helps students master web development from front-end to back-end.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recruiting Partners Section -->
+<section id="recruiting-partners" class="section-padding bg-light">
+    <div class="container">
+        <h4 class="text-center mb-5">Our Recruiting Partners</h4>
+        <div class="row text-center">
+            <!-- Partner 1 -->
+            <div class="col-md-3">
+                <img th:src="@{/img/partner1.png}" alt="Partner 1" class="img-fluid mb-3" style="width: 150px; height: 150px; object-fit: contain;">
+                <h5>Tech Innovators Inc.</h5>
+                <p class="text-muted">Top tech company partnering with us for internships and job placements in software development.</p>
+            </div>
+            <!-- Partner 2 -->
+            <div class="col-md-3">
+                <img th:src="@{/img/partner2.png}" alt="Partner 2" class="img-fluid mb-3" style="width: 150px; height: 150px; object-fit: contain;">
+                <h5>Global Data Solutions</h5>
+                <p class="text-muted">A leading data analytics firm offering placements to our top graduates in data science and AI.</p>
+            </div>
+            <!-- Partner 3 -->
+            <div class="col-md-3">
+                <img th:src="@{/img/partner3.jpeg}" alt="Partner 3" class="img-fluid mb-3" style="width: 150px; height: 150px; object-fit: contain;">
+                <h5>SecureNet Systems</h5>
+                <p class="text-muted">Partnering with us to hire skilled professionals in cybersecurity and network security.</p>
+            </div>
+            <!-- Partner 4 -->
+            <div class="col-md-3">
+                <img th:src="@{/img/partner4.jpeg}" alt="Partner 4" class="img-fluid mb-3" style="width: 150px; height: 150px; object-fit: contain;">
+                <h5>Web Creators Hub</h5>
+                <p class="text-muted">A digital solutions company providing job opportunities for web developers and designers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Students Say</h2>
+        <div class="row">
+            <div class="col-md-4 testimonial">
+                <img th:src="@{/img/student.jpg}" alt="John Doe">
+                <p>"This platform is fantastic! The courses are comprehensive, and the flexibility of learning at my own pace is unbeatable."</p>
+                <h5>- John Doe</h5>
+            </div>
+            <div class="col-md-4 testimonial">
+                <img th:src="@{/img/student.jpg}" alt="Sarah Lee">
+                <p>"The knowledge I gained here helped me pivot my career. The instructors are always ready to assist whenever needed."</p>
+                <h5>- Sarah Lee</h5>
+            </div>
+            <div class="col-md-4 testimonial">
+                <img th:src="@{/img/student.jpg}" alt="Mark Smith">
+                <p>"I loved the hands-on projects in every course. It helped me solidify the skills and apply them directly in my job!"</p>
+                <h5>- Mark Smith</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section-padding">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <!-- Question 1 -->
+                    <div class="accordion-item mb-3">
+                        <h4 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What courses do you offer?
+                            </button>
+                        </h4>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer a wide range of courses in web development, data science, and more.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item mb-3">
+                        <h4 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How do I enroll in a course?
+                            </button>
+                        </h4>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Simply visit the course catalog and click on the course you wish to enroll in.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item mb-3">
+                        <h4 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Who can I contact for support?
+                            </button>
+                        </h4>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can reach out to us via our contact form below.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Image (Optional) -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Section -->
+<section id="contact" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p>&copy; 2024 Online Learning Management System. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="text-white me-4">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
